@@ -1,0 +1,38 @@
+<app-generic-dialog
+  title="New Dataset"
+  primaryButtonName="Save"
+  secondaryButtonName="Cancel"
+  (onPrimaryButtonClick)="save()"
+  [primaryButtonDisabled]="isSaveDisabled"
+  (onSecondaryButtonClick)="close()"
+>
+  <div [formGroup]="form" class="form">
+    <mat-form-field>
+      <input matInput
+        #datasetName
+        [maxlength]="MAX_DATASET_NAME"
+        placeholder="Dataset Name"
+        formControlName="datasetName">
+      <mat-hint align="end">{{datasetName.value.length}} / {{ MAX_DATASET_NAME }}</mat-hint>
+    </mat-form-field>
+    <div class="file-upload-container">
+      <span class="mat-caption">Import Gedcom file (optional)</span>
+      <mat-toolbar>
+        <button mat-flat-button>
+          Browse File
+        </button>
+        <span class="file-name mat-body">
+          {{ fileLabel }}
+        </span>
+      </mat-toolbar>
+
+      <input
+        type="file"
+        #fileInput
+        id="uploadFile"
+        (change)="uploadFileEvt($event)"
+        name="uploadFile"
+        accept=".ged" />
+    </div>
+  </div>
+</app-generic-dialog>

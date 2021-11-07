@@ -1,0 +1,32 @@
+.form {
+  display: grid;
+}
+
+.file-upload-container {
+  position: relative;
+  margin-top: 20px;
+
+  .mat-form-field {
+    margin: 40px 0;
+    width: 500px !important;
+  }
+
+  .mat-form-field {
+    width: 100%;
+  }
+
+  .file-name {
+    margin-left: 10px;
+  }
+
+  #uploadFile {
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    z-index: 9;
+    opacity: 0;
+    height: 100%;
+    cursor: pointer;
+    position: absolute;
+  }
+}

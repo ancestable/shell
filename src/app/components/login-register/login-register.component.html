@@ -1,0 +1,53 @@
+<section class="login-container mat-app-background">
+  <div class="center-content">
+    <mat-card class="login-register-card">
+      <mat-card-content>
+        <mat-tab-group mat-align-tabs="center" animationDuration="200ms">
+          <mat-tab label="Login">
+            <form [formGroup]="loginForm" (submit)="login()">
+              <mat-form-field class="login-register-full-width">
+                <mat-label>Email</mat-label>
+                <input type="email" matInput formControlName="email" placeholder="Email" value="">
+                <mat-icon matSuffix>email</mat-icon>
+              </mat-form-field>
+              <mat-form-field class="login-register-full-width">
+                <mat-label>Password</mat-label>
+                <input type="password" matInput formControlName="password" placeholder="Password">
+                <mat-icon matSuffix>vpn_key</mat-icon>
+              </mat-form-field>
+              <button mat-flat-button color="primary">Login</button>
+              <div *ngIf="loginError" class="error-message">
+                <mat-icon matSuffix>error</mat-icon>
+                <span>Email or password not valid</span>
+              </div>
+            </form>
+          </mat-tab>
+          <mat-tab label="Register">
+            <form [formGroup]="registerForm" (submit)="register()">
+              <mat-form-field class="login-register-full-width">
+                <mat-label>Email</mat-label>
+                <input type="email" matInput formControlName="email" placeholder="Email" value="">
+                <mat-icon matSuffix>email</mat-icon>
+              </mat-form-field>
+              <mat-form-field class="login-register-full-width">
+                <mat-label>Password</mat-label>
+                <input type="password" matInput formControlName="password" placeholder="Password">
+                <mat-icon matSuffix>vpn_key</mat-icon>
+              </mat-form-field>
+              <mat-form-field class="login-register-full-width">
+                <mat-label>Password</mat-label>
+                <input type="password" matInput formControlName="rePassword" placeholder="Password">
+                <mat-icon matSuffix>vpn_key</mat-icon>
+              </mat-form-field>
+              <button mat-flat-button color="primary">Register</button>
+              <div *ngIf="registerError" class="error-message">
+                <mat-icon matSuffix>error</mat-icon>
+                <span>This email is already taken</span>
+              </div>
+            </form>
+          </mat-tab>
+        </mat-tab-group>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</section>

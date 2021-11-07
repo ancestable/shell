@@ -1,0 +1,21 @@
+<nav class="navbar" [class.mat-elevation-z8]=true>
+  <div>
+    <ng-container *ngIf="datasetSelectorItems.length; else noDatasets">
+      <app-dataset-selector
+        [items]="datasetSelectorItems"
+        [selectedItemName]="selectedDatasetName"
+        (onCreateNewClick)="openCreateNewDialog()"
+        (onItemClick)="onItemClick($event)"
+      ></app-dataset-selector>
+    </ng-container>
+  </div>
+  <div>
+    <app-account-menu></app-account-menu>
+  </div>
+</nav>
+
+<ng-template #noDatasets>
+  <button aria-hidden=false mat-flat-button color="accent" class="button" (click)="openCreateNewDialog()">
+    <span>Create new</span>
+  </button>
+</ng-template>

@@ -1,6 +1,6 @@
 {
-  "name": "ancestable-root",
-  "version": "0.0.0",
+  "name": "@ancestable/shell",
+  "version": "0.0.1",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -10,14 +10,18 @@
   },
   "private": true,
   "dependencies": {
+    "@ancestable/shared": "^1.0.1",
     "@angular/animations": "~12.2.0",
+    "@angular/cdk": "^12.2.11",
     "@angular/common": "~12.2.0",
     "@angular/compiler": "~12.2.0",
     "@angular/core": "~12.2.0",
     "@angular/forms": "~12.2.0",
+    "@angular/material": "^12.2.11",
     "@angular/platform-browser": "~12.2.0",
     "@angular/platform-browser-dynamic": "~12.2.0",
     "@angular/router": "~12.2.0",
+    "moment": "^2.29.1",
     "rxjs": "~6.6.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
